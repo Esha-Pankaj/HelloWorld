@@ -14,15 +14,13 @@ pipeline {
             }
         }
     }
-}
-post{
-   always{
-       echo "This block will definately be excetued"
-      }
-   success{
-       echo "executed only after success"
+
+    post {
+        success {
+            echo '✅ Build and execution successful!'
         }
-   failure{
-        echo "Executed if fails"
+        failure {
+            echo '❌ Build or execution failed!'
         }
+    }
 }
