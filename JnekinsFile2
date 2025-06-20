@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Compile') {
+            steps {
+                bat 'javac Jenkins.java'
+            }
+        }
+
+        stage('Run') {
+            steps {
+                bat 'java Jenkins'
+            }
+        }
+    }
+}
+post{
+   always{
+       echo "This block will definately be excetued"
+      }
+   success{
+       echo "executed only after success"
+        }
+   failure{
+        echo "Executed if fails"
+        }
+}
