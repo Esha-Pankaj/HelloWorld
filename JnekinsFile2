@@ -16,11 +16,14 @@ pipeline {
     }
 
     post {
+         always {
+            echo 'Cleaning up... this runs no matter what.'
+         }
         success {
-            echo '✅ Build and execution successful!'
+            echo 'Build and execution successful!'
         }
         failure {
-            echo '❌ Build or execution failed!'
+            echo ' Build or execution failed!'
         }
     }
 }
