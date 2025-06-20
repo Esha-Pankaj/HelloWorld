@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Compile') {
+            steps {
+                sh 'javac Jenkins.java'
+            }
+        }
+        stage('Run') {
+            steps {
+                sh 'java Jenkins'
+            }
+        }
+    }
+}
